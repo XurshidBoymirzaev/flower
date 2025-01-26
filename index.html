@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .flower-container {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            animation: appear 3s ease-out;
+        }
+
+        .stem {
+            position: absolute;
+            bottom: -100px;
+            left: 20%;
+            width: 10px;
+            height: 200px;
+            background: linear-gradient(to bottom, #3a9a5e, #2b7a4b);
+            transform: translateX(-50%) scaleY(0);
+            animation: grow-stem 2s ease-out forwards;
+        }
+
+        @keyframes grow-stem {
+            0% {
+                transform: translateX(-50%) scaleY(0);
+            }
+            100% {
+                transform: translateX(-50%) scaleY(1);
+            }
+        }
+
+        .petal {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background: radial-gradient(circle, #ff6f91 0%, #ff3366 80%);
+            border-radius: 50%;
+            transform-origin: bottom center;
+            opacity: 0;
+            transform: scale(0.5) rotate(var(--angle));
+            animation: grow 2s ease-out forwards;
+        }
+
+        .petal:nth-child(1) { --angle: 0deg; animation-delay: 0.2s; }
+        .petal:nth-child(2) { --angle: 45deg; animation-delay: 0.4s; }
+        .petal:nth-child(3) { --angle: 90deg; animation-delay: 0.6s; }
+        .petal:nth-child(4) { --angle: 135deg; animation-delay: 0.8s; }
+        .petal:nth-child(5) { --angle: 180deg; animation-delay: 1s; }
+        .petal:nth-child(6) { --angle: 225deg; animation-delay: 1.2s; }
+        .petal:nth-child(7) { --angle: 270deg; animation-delay: 1.4s; }
+        .petal:nth-child(8) { --angle: 315deg; animation-delay: 1.6s; }
+
+        @keyframes grow {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(var(--angle));
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(var(--angle));
+            }
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #ffdc73 0%, #ffaa00 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            animation: center-grow 2s ease-out forwards 1.8s;
+        }
+
+        @keyframes center-grow {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            color: #fff;
+            animation: fade-in 2s ease-in-out 3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flower-container">
+        <div class="stem"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+    <div class="message">FOR MOHIIIIIIIIIIIIIII</div>
+</body>
+</html>
